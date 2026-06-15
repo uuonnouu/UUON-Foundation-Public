@@ -1,141 +1,148 @@
-# UUON Foundation — Mathematical Operating System
-## Base Mainnet
+# UUON Foundation — Public Repository
+## Mathematical Operating System · Base Mainnet
 
 **Creator:** Phillip Aguilar Ruiz III
-**Copyright:** © UUON Foundation Inc. All Rights Reserved
-**License:** CC BY-NC 4.0
+**Organization:** UUON Foundation Inc.
 **Genesis Hash:** `cf114022b5e4e1d6fdeb36890f35f605857cf2de93b53ebcb9c8e5652413ca04`
-**Anchored:** Base Mainnet — Block 47259953
+**Anchored:** Base Mainnet · Block 47259953
+**License:** CC BY-NC 4.0
 
 ---
 
 ## What This Is
 
-4,000,000 shape tokens generated. 570 mathematical surfaces. 3 live contracts on Base mainnet. 1 working API. 32 published NeRF shapes.
+The first blockchain ecosystem natively anchored to mathematical objects.
 
-UUON Foundation is building the first blockchain ecosystem natively anchored to mathematical objects. Every token, proof, and ecosystem layer derives from **32 genesis shapes** — parametric surfaces rendered as Neural Radiance Fields (NeRF). These shapes are not visualizations of data. They **are** the algorithms, expressed as geometry.
+32 genesis shapes. 3 live tokens. 4,000,000+ shape tokens in production.
+1 working API. 1 genesis hash. Everything verifiable on-chain.
 
-The SHA-256 compression surface encodes the diffusion properties of Bitcoin's hash function. The Bloch sphere encodes the complete state space of a single qubit. The Kyber lattice encodes the error distribution of post-quantum key exchange. **The geometry is the mathematics.**
+The shapes are not visualizations. They are the algorithms — expressed as geometry.
+SHA-256 as a surface. The Bloch sphere as a volume. Kyber as a lattice field.
+**The geometry is the mathematics.**
 
 ---
 
-## Live Contracts — Base Mainnet
+## Live Contracts · Base Mainnet
 
-Verify all on [Basescan](https://basescan.org).
-
-| Token | Contract Address | Supply |
+| Token | Contract | Role |
 |---|---|---|
-| UUON | `0x29b056EF63867BECe07DA46c470aC168154EF275` | 10M hard cap |
-| PIEZ | `0xfb9c83432331EAf6f4a9D9488828823587d6f3da` | 10M minted |
-| PSENT | `0x985A1ebac4388DFb6EB4FE1171dCa9c6a5DB9cE7` | 10M minted |
-| NFT ERC-1155 | `0xa14c3015E6b9Ad30337bD72c94Dc236835f61165` | 2,154 minted |
+| UUON | `0x29b056EF63867BECe07DA46c470aC168154EF275` | Foundation · governance · gas |
+| PIEZ | `0xfb9c83432331EAf6f4a9D9488828823587d6f3da` | Computation key · pressure → signal |
+| PSENT | `0x985A1ebac4388DFb6EB4FE1171dCa9c6a5DB9cE7` | Intelligence key · signal → meaning |
+| NFT | `0xa14c3015E6b9Ad30337bD72c94Dc236835f61165` | 2,154 on-chain shape manifolds |
 
----
-
-## Token Roles — Plain English
-
-**UUON** is the foundation. It balances the ecosystem, represents shape ownership, and will become the native gas token on the Phase 2 appchain.
-
-**PIEZ** is the computation key. Hold PIEZ to access shape formula data, NeRF exports, and parametric computation through the API. Named after the piezoelectric principle: mathematical pressure generates a signal.
-
-**PSENT** is the intelligence key. Hold PSENT to access risk surfaces, anomaly detection, and mathematical intelligence signals derived from the shapes. Named after the sentiment layer: signal becomes meaning.
+Verify all: [basescan.org](https://basescan.org)
 
 ---
 
 ## Live API
 
-Base URL: `https://distinguished-rebirth-production.up.railway.app`
+`https://distinguished-rebirth-production.up.railway.app`
 
-```bash
-# List all 32 genesis shapes
-GET /api/shapes
-
-# Get specific shape metadata
-GET /api/shapes/{shapeId}
-
-# PIEZ-gated: formula data + NeRF config
-GET /api/shapes/{shapeId}/compute
-Authorization: PIEZ-Balance {yourWalletAddress}
-
-# PSENT-gated: intelligence signal
-GET /api/shapes/{shapeId}/signal
-Authorization: PSENT-Balance {yourWalletAddress}
-
-# Verify genesis hash
-GET /api/genesis/verify
+```
+GET  /api/shapes              — list all 32 genesis shapes
+GET  /api/shapes/{id}         — shape metadata (public)
+GET  /api/shapes/{id}/compute — formula data  (requires PIEZ)
+GET  /api/shapes/{id}/signal  — intelligence  (requires PSENT)
+GET  /api/genesis/verify      — genesis hash check
 ```
 
-Full documentation: [`api/reference.md`](api/reference.md)
+Full reference → [`api/reference.md`](api/reference.md)
 
 ---
 
-## The 6-Dimension Architecture
+## The 6-Dimension Structure
 
-32 genesis shapes map onto 6 Fibonacci levels: **1+2+3+5+8+13 = 32**. This is not design — it is a mathematical property of the shape set.
+32 shapes · 6 Fibonacci levels · 1 dimensional limit
 
 ```
-Level 1 | F(2)=1  | 1 shape  | UUON — mathematical foundation
-Level 2 | F(3)=2  | 2 shapes | PIEZ + PSENT — dual oscillators
-Level 3 | F(4)=3  | 3 shapes | First expansion layer
-Level 4 | F(5)=5  | 5 shapes | Mid ecosystem
-Level 5 | F(6)=8  | 8 shapes | Broad utility
-Level 6 | F(7)=13 |13 shapes | Full network — dimensional limit
+Level 1 · F(2)=1  · 1 shape  · UUON            · φ⁰ = 1.000
+Level 2 · F(3)=2  · 2 shapes · PIEZ + PSENT    · φ¹ = 1.618
+Level 3 · F(4)=3  · 3 shapes · expansion        · φ² = 2.618
+Level 4 · F(5)=5  · 5 shapes · mid ecosystem    · φ³ = 4.236
+Level 5 · F(6)=8  · 8 shapes · broad utility    · φ⁴ = 6.854
+Level 6 · F(7)=13 ·13 shapes · full network     · φ⁵ = 11.09
+
+1+2+3+5+8+13 = 32  ←  perfect close
 ```
 
-Beyond 6 levels: mathematically undefined. The boundary mirrors string theory's 6 compactified dimensions. Shape #33 (Policy Impact Visualization) is the bridge key to future expansion.
-
-Each level that activates multiplies demand for the fixed 32 shapes by phi (φ = 1.618...). The shapes are fixed. Demand grows. Scarcity is mathematical, not artificial.
+Beyond 6: undefined. The boundary mirrors string theory's 6 compactified dimensions.
+Shape #33 (Policy Impact) is the bridge key to future expansion.
 
 ---
 
-## Genesis Dataset — 32 Shapes
+## Token Roles · Plain English
 
-All shapes are in the `shapes/` directory. Each contains 4 files: `metadata.json`, `formulas.json`, `transforms.json`, `instant_ngp_config.json`.
+**UUON** — the foundation. Balances the ecosystem. Future gas token on the appchain.
 
-| Level | Shape | Mathematical Role |
-|---|---|---|
-| 1 | SHA-256 Compression | Bitcoin hash surface — foundation anchor |
-| 2 | Keccak/SHA-3 Sponge | Ethereum hash topology |
-| 2 | AES Rijndael Cipher | Symmetric encryption surface |
-| 3 | Elliptic Curve Cryptography | Wallet key geometry |
-| 3 | Lattice Kyber/NTRU | Post-quantum key exchange |
-| 3 | Hash Avalanche Effect | Hash security fingerprint |
-| 4 | Blockchain Merkle Tree | Proof path geometry |
-| 4 | Black-Scholes Surface | DeFi options pricing |
-| 4 | Volatility Surface | On-chain vol intelligence |
-| 4 | Monte Carlo Risk | Treasury risk modeling |
-| 4 | Crypto Price Fractal | Market structure detection |
-| 5 | Qubit Bloch Sphere | Universal qubit coordinates |
-| 5 | Qubit State Vector | Amplitude geometry |
-| 5 | Qubit Superposition | Quantum speedup source |
-| 5 | Two-Qubit Entangled | QKD security primitive |
-| 5 | Two-Qubit Product | Entanglement baseline |
-| 5 | 3-Qubit GHZ State | Quantum secret sharing |
-| 5 | Multi-Qubit Tensor | Register scaling |
-| 5 | 3-Qubit Error Correction | Bit-flip protection |
-| 6 | Shor 9-Qubit Code | Fault-tolerant QEC |
-| 6 | Transformer Attention | AI oracle transparency |
-| 6 | Neural Loss Landscape | Training geometry audit |
-| 6 | Gradient Descent Path | Optimizer audit |
-| 6 | Kolmogorov Complexity | Minimum description length |
-| 6 | Pauli-X Gate | Quantum NOT |
-| 6 | Pauli-Y Gate | Bit + phase flip |
-| 6 | Pauli-Z Gate | Phase flip |
-| 6 | Hadamard Gate | Superposition creator |
-| 6 | Phase Gate S | Quarter-turn phase |
-| 6 | Phase Gate T | Magic state gate |
-| 6 | CNOT Gate | Entanglement generator |
-| 6 | Quantum Information Flow | Channel geometry |
+**PIEZ** — the computation key. Named after the piezoelectric principle.
+Mathematical pressure generates a signal. Hold PIEZ → access shape formula data.
+
+**PSENT** — the intelligence key. Signal becomes meaning.
+Hold PSENT → access risk surfaces, anomaly detection, intelligence signals.
+
+**Shape data lives behind the token gate. That is the utility. That is the value.**
 
 ---
 
-## Shape Token Standard
+## Shape Token Standard · v0.1
 
-Every API response returns a Shape Token Standard v0.1 compliant envelope.
+Every gated API response returns a Shape Token Standard compliant object.
 
-This is the first token standard where mathematical authenticity is cryptographically verifiable without trusting the API. The `integrity_hash` in every response is anchored to the genesis hash — any system can verify a shape is authentic offline.
+The `integrity_hash` in every response anchors to the genesis hash.
+Any system can verify a shape is authentic without trusting the API.
+No existing token standard has cryptographic content verification in the schema.
 
-Full specification: [`SHAPE_TOKEN_STANDARD.md`](SHAPE_TOKEN_STANDARD.md)
+Full spec → [`SHAPE_TOKEN_STANDARD.md`](SHAPE_TOKEN_STANDARD.md)
+
+---
+
+## Genesis Shapes · 32 · by Level
+
+Shape data is **private** — gated by PIEZ.
+Shape *names* are public — the catalog:
+
+| Level | Shapes |
+|---|---|
+| 1 | SHA-256 Compression Function |
+| 2 | Keccak/SHA-3 Sponge · AES Rijndael Cipher |
+| 3 | Elliptic Curve Cryptography · Kyber/NTRU · Hash Avalanche Effect |
+| 4 | Blockchain Merkle Tree · Black-Scholes · Volatility Surface · Monte Carlo Risk · Crypto Price Fractal |
+| 5 | Qubit Bloch Sphere · State Vector · Superposition · Two-Qubit Entangled · Two-Qubit Product · 3-Qubit GHZ · Multi-Qubit Tensor · 3-Qubit Error Correction |
+| 6 | Shor 9-Qubit · Transformer Attention · Neural Loss Landscape · Gradient Descent · Kolmogorov Complexity · Pauli X/Y/Z · Hadamard · Phase S/T · CNOT · Quantum Information Flow |
+
+---
+
+## Repository Structure
+
+```
+UUON-Foundation-Public/
+└── Mathematical-Operating-System-Base-Mainnet/
+    │
+    ├── README.md                     ← this file
+    ├── SHAPE_TOKEN_STANDARD.md       ← protocol definition · v0.1
+    │
+    ├── abi/
+    │   ├── UUON_ERC20.json           ← contract ABI + address
+    │   ├── PIEZ_ERC20.json           ← contract ABI + address
+    │   └── PSENT_ERC20.json          ← contract ABI + address
+    │
+    ├── api/
+    │   └── reference.md              ← endpoint docs · auth · examples
+    │
+    ├── genesis/
+    │   └── verify.sh                 ← genesis hash verification script
+    │
+    └── docs/
+        ├── architecture.md           ← 6-level system · gPoW · roadmap
+        └── claims.md                 ← live vs research-grade vs future
+```
+
+**What is NOT here:**
+Shape formula files · NeRF transform matrices · Engine source code
+Middleware · Contract source · Deployment scripts · Wallet credentials
+
+Those are private. Access the data through the token gate.
 
 ---
 
@@ -143,68 +150,21 @@ Full specification: [`SHAPE_TOKEN_STANDARD.md`](SHAPE_TOKEN_STANDARD.md)
 
 ```bash
 bash genesis/verify.sh
-# Expected: cf114022b5e4e1d6fdeb36890f35f605857cf2de93b53ebcb9c8e5652413ca04
+# cf114022b5e4e1d6fdeb36890f35f605857cf2de93b53ebcb9c8e5652413ca04
 ```
 
 ---
 
-## Repository Structure
-
-```
-UUON Foundation - Public Repository/
-└── Mathematical Operating System - Base Mainnet/
-    ├── README.md                     ← this file
-    ├── SHAPE_TOKEN_STANDARD.md       ← Shape Token Standard v0.1
-    ├── shapes/                       ← 32 genesis shape datasets
-    │   ├── sha256_compression_function/
-    │   │   ├── metadata.json
-    │   │   ├── formulas.json
-    │   │   ├── transforms.json
-    │   │   └── instant_ngp_config.json
-    │   └── [31 more shapes...]
-    ├── abi/                          ← Contract ABIs
-    │   ├── UUON_ERC20.json
-    │   ├── PIEZ_ERC20.json
-    │   └── PSENT_ERC20.json
-    ├── api/
-    │   └── reference.md             ← Full API documentation
-    ├── genesis/
-    │   └── verify.sh                ← Genesis hash verification
-    └── docs/
-        ├── architecture.md          ← 6-dimension system design
-        └── claims.md                ← What is live vs research-grade
-```
-
----
-
-## What Is Not Here
-
-The following are intentionally private:
-
-- Shape generation engine source code
-- NeRF training pipelines
-- Deployer private keys and wallet credentials
-- Production database credentials
-- Internal build and deployment systems
-- Proprietary equation parameters and coefficients
-- Commercial SDK and enterprise modules
-
-Public research establishes authorship.
-Private infrastructure creates commercial value.
-
----
-
-## Phase Roadmap
+## Roadmap
 
 | Phase | Status | Description |
 |---|---|---|
-| Phase 1 | **Live** | ERC-20 tokens on Base mainnet, 32 shapes published, API serving |
-| Phase 1.5 | **Building** | PIEZ/PSENT token-gated API, Shape Token Standard |
-| Phase 2 | Q4 2026 | Cosmos SDK appchain, 5 validators, gPoW consensus |
-| Phase 3 | 2027 | Native chain, Dilithium signatures, Theory of Everything shapes |
+| 1 · Base ERC-20 | ✅ Live | 3 tokens · 32 shapes · API serving |
+| 1.5 · Token Gate | 🔨 Building | PIEZ/PSENT middleware · Shape Token Standard |
+| 2 · Appchain | Q4 2026 | Cosmos SDK · 5 validators · gPoW consensus |
+| 3 · Native Chain | 2027 | Dilithium signatures · Theory of Everything shapes |
 
 ---
 
-*UUON Foundation Inc. — June 2026*
-*Creator: Phillip Aguilar Ruiz III*
+*UUON Foundation Inc. · June 2026 · Creator: Phillip Aguilar Ruiz III*
 *Genesis Hash: cf114022b5e4e1d6fdeb36890f35f605857cf2de93b53ebcb9c8e5652413ca04*
