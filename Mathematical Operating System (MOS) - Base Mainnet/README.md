@@ -1,4 +1,4 @@
-# UUON Foundation Public Repository — Mathematical Operating System
+# UUON Foundation — Mathematical Operating System
 ## Base Mainnet
 
 **Creator:** Phillip Aguilar Ruiz III
