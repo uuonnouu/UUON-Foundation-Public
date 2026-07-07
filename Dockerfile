@@ -1,20 +1,17 @@
-# Ultra-minimal Node server
-# No build, no tsx, just node + JavaScript
+# Node.js ES Module server for credit system
 
 FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy package files
 COPY package*.json ./
 
-# Install only production dependencies (no devDependencies)
 RUN npm ci --omit=dev
 
-# Create a simple JavaScript entry point (no TypeScript)
+# Create ES module entry point
 RUN cat > index.js << 'EOF'
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 
 const app = express();
 app.use(cors());
@@ -34,11 +31,11 @@ app.get('/api/credits/packages', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, '0.0.0.0', () => console.log(`✅ Server on port ${PORT}`));
 EOF
 
-ENV PORT=5001
-EXPOSE 5001
+ENV PORT=8080
+EXPOSE 8080
 
 CMD ["node", "index.js"]
