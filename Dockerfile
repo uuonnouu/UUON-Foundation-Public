@@ -1,33 +1,29 @@
-# Build stage
-FROM node:20-alpine AS builder
+# UUON MOS — Optimized for Railway
+# Simplified: Skip build, run server directly with tsx
 
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci
-
-COPY . .
-
-# Build the app
-RUN npm run build
-
-# Runtime stage
 FROM node:20-alpine
 
 WORKDIR /app
 
-ENV NODE_ENV=development
-
+# Copy package files
 COPY package*.json ./
+
+# Install dependencies (including dev for tsx)
 RUN npm ci
 
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/migrations ./migrations 2>/dev/null || true
-COPY server ./server
-COPY shared ./shared
-COPY tsconfig.json ./
+# Copy source code
+COPY . .
 
-EXPOSE 5000
+# Environment
+ENV NODE_ENV=production
+ENV PORT=5001
 
-# Run database migration and start dev server
-CMD ["sh", "-c", "DATABASE_URL='postgres://postgres:[REDACTED]@uuon-clouud-db:5432/clouud' npm run dev"]
+# Expose port
+EXPOSE 5001
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:5001/api/credits/packages', (r) => r.statusCode === 200 ? process.exit(0) : process.exit(1))"
+
+# Start server directly with tsx (no build step)
+CMD ["npx", "tsx", "server/index.ts"]
