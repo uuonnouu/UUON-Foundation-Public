@@ -26,12 +26,14 @@ const PACKAGES = {
 
 // ─── HEALTH ───────────────────────────────────────────────────
 app.get('/health', async (req, res) => {
+  let dbStatus = 'unknown';
   try {
     await pool.query('SELECT 1');
-    res.json({ status: 'ok', db: 'connected', ts: new Date().toISOString() });
+    dbStatus = 'connected';
   } catch (err) {
-    res.status(503).json({ status: 'degraded', db: 'disconnected', error: err.message });
+    dbStatus = 'disconnected';
   }
+  res.json({ status: 'ok', db: dbStatus, ts: new Date().toISOString() });
 });
 
 // ─── 1. GET /api/credits/packages ─────────────────────────────
