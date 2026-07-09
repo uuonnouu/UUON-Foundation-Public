@@ -4,9 +4,12 @@ import pkg from 'pg';
 const { Pool } = pkg;
 
 // ─── DB ────────────────────────────────────────────────────────
+// Strip sslmode from URL — we set SSL options directly to avoid pg warning
+const dbUrl = process.env.DATABASE_URL?.replace(/[?&]sslmode=[^&]*/g, '').replace(/[?&]channel_binding=[^&]*/g, '');
+
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false, sslmode: 'verify-full' },
+  connectionString: dbUrl,
+  ssl: { rejectUnauthorized: false },
   max: 10,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 5000,
