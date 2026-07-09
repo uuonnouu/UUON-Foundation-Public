@@ -6,7 +6,7 @@ const { Pool } = pkg;
 // ─── DB ────────────────────────────────────────────────────────
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false },
+  ssl: { rejectUnauthorized: false, sslmode: 'verify-full' },
   max: 10,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 5000,
